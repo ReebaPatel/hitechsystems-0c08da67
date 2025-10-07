@@ -13,7 +13,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-lg border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background backdrop-blur-lg border-b border-border/50">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -21,7 +21,7 @@ const Navigation = () => {
             <div className="w-11 h-11 bg-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
               <span className="text-primary-foreground font-bold text-xl">H</span>
             </div>
-            <span className="text-xl font-bold text-foreground tracking-tight">HiTech Systems</span>
+            <span className="text-xl font-bold text-foreground tracking-tight">Hitech Systems</span>
           </a>
 
           {/* Desktop Navigation */}
