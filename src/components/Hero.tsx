@@ -17,7 +17,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl pl-20">
+<div className="max-w-4xl pl-20 md:pl-20 sm:pl-8 pl-4">
 
 
           <h1 className="text-5xl mt-16 md:text-6xl font-bold text-primary-foreground mb-6 animate-slide-in leading-tight">
