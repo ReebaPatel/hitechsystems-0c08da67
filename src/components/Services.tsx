@@ -26,7 +26,7 @@ const Services = () => {
 
   return (
     <section id="services" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-14">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Our Services
@@ -61,10 +61,10 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="ghost" className="w-full group/btn">
+                {/* <Button variant="ghost" className="w-full group/btn">
                   Learn More
                   <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
+                </Button> */}
               </CardContent>
             </Card>
           ))}

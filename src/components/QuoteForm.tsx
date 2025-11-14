@@ -88,7 +88,7 @@ const QuoteForm = ({ children }: QuoteFormProps) => {
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    
+
     try {
       // Encode data for WhatsApp message
       const message = `*New Quote Request*%0A%0A` +
@@ -100,8 +100,17 @@ const QuoteForm = ({ children }: QuoteFormProps) => {
         `*Project Details:*%0A${encodeURIComponent(data.projectDetails)}`;
 
       // Open WhatsApp with pre-filled message
-      const whatsappUrl = `https://wa.me/919819877289?text=${message}`;
-      window.open(whatsappUrl, '_blank');
+      const apiUrl = "https://script.google.com/macros/s/AKfycbyytdb61_vyxROaKtkk4Amb9aVq4vip7orNVfgjjk8eQ0H14FdlUMZi43TNMdVJY6iE/exec";
+
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
 
       toast({
         title: "Quote Request Sent!",

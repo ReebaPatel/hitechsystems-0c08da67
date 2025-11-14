@@ -10,7 +10,7 @@ const ClientLogos = () => {
 
   return (
     <section className="py-16 bg-muted">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-14">
         <div className="text-center mb-12">
           <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
             Trusted By Government Leaders
