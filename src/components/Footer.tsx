@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,9 +25,9 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#services" className="text-primary-foreground/80 hover:text-secondary transition-colors">Services</a></li>
-              <li><a href="#projects" className="text-primary-foreground/80 hover:text-secondary transition-colors">Projects</a></li>
-              <li><a href="#about" className="text-primary-foreground/80 hover:text-secondary transition-colors">About Us</a></li>
+              <li><a href="/#services" className="text-primary-foreground/80 hover:text-secondary transition-colors">Services</a></li>
+              <li><a href="/#projects" className="text-primary-foreground/80 hover:text-secondary transition-colors">Projects</a></li>
+              <li><Link to="/about" className="text-primary-foreground/80 hover:text-secondary transition-colors">About Us</Link></li>
             </ul>
           </div>
 
@@ -36,15 +37,20 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-primary-foreground/80">
                 <Mail className="w-4 h-4 text-secondary" />
-                <span className="text-sm">info@hsystems.in</span>
+                <a href="mailto:hitech_s@msn.com" className="text-sm hover:text-secondary transition-colors">
+                  hitech_s@msn.com
+                </a>
               </li>
               <li className="flex items-center gap-2 text-primary-foreground/80">
                 <Phone className="w-4 h-4 text-secondary" />
-                <span className="text-sm">+91 (0) 123-456-7890</span>
+                <div className="text-sm">
+                  <div>0251-2328313</div>
+                  <div>+91 9819877289</div>
+                </div>
               </li>
-              <li className="flex items-center gap-2 text-primary-foreground/80">
-                <MapPin className="w-4 h-4 text-secondary" />
-                <span className="text-sm">Mumbai, India</span>
+              <li className="flex items-start gap-2 text-primary-foreground/80">
+                <MapPin className="w-4 h-4 text-secondary mt-1 flex-shrink-0" />
+                <span className="text-sm">123 & 124, Blossom Commercial Centre, Raheja Complex, Kalyan (W)</span>
               </li>
             </ul>
           </div>
