@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import QuoteForm from "./QuoteForm";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,9 +51,11 @@ const Navigation = () => {
                 </a>
               )
             ))}
-            <Button variant="secondary" size="default" className="ml-4">
-              Get Quote
-            </Button>
+            <QuoteForm>
+              <Button variant="secondary" size="default" className="ml-4">
+                Get Quote
+              </Button>
+            </QuoteForm>
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,9 +92,11 @@ const Navigation = () => {
               )
             ))}
             <div className="pt-4">
-              <Button variant="secondary" size="default" className="w-full">
-                Get Quote
-              </Button>
+              <QuoteForm>
+                <Button variant="secondary" size="default" className="w-full">
+                  Get Quote
+                </Button>
+              </QuoteForm>
             </div>
           </div>
         )}

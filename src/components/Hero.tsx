@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Award, Users } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
+import QuoteForm from "./QuoteForm";
 
 const Hero = () => {
   return (
@@ -33,14 +34,17 @@ const Hero = () => {
             <span className="text-sm font-medium text-primary-foreground">Trusted Government Contractor Since 2007</span>
           </div>
           <div className="flex flex-col sm:flex-row gap-5 mb-12 animate-fade-in">
-            <Button variant="hero" size="sm" className="group">
-              Get a Quote
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <QuoteForm>
+              <Button variant="hero" size="sm" className="group">
+                Get a Quote
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </QuoteForm>
             <Button
               variant="outline"
               size="sm"
               className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground"
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View Projects
             </Button>
