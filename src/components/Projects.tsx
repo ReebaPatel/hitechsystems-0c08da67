@@ -7,18 +7,32 @@ import project2 from "@/assets/project-2.jpg";
 const Projects = () => {
   const projects = [
     {
-      title: "Advanced Electrical Infrastructure",
-      client: "MCGM",
-      image: project1,
-      metric: "40% Increased Efficiency",
-      description: "Complete electrical system overhaul for major municipal facility",
+      title: "Nisargruna Biomethanation Plant O&M",
+      client: "MCGM - Deonar Abattoir",
+      image: project2,
+      metric: "₹27.7M Contract Value",
+      description: "Biennial operation and maintenance contract for environmental sustainability",
     },
     {
-      title: "Industrial Biogas Plant",
-      client: "ONGC",
+      title: "Critical Facility Maintenance",
+      client: "BARC",
+      image: project1,
+      metric: "₹12.8M Multi-Facility AMC",
+      description: "Comprehensive AMCs for EOT cranes, AC, refrigeration & deep-freezers across TSD, CFB, TSH facilities",
+    },
+    {
+      title: "Animal Inventory Management System",
+      client: "MCGM - Deonar Abattoir",
+      image: project1,
+      metric: "₹7.7M IT Solution",
+      description: "Custom software design and commissioning for inventory management and Eid services",
+    },
+    {
+      title: "LED Street Lighting Project",
+      client: "MCGM",
       image: project2,
-      metric: "30% Energy Savings",
-      description: "State-of-the-art biogas installation and mechanical systems",
+      metric: "Energy-Efficient Infrastructure",
+      description: "Supply and installation of LED street lights and high mast lights across Ghatkopar, Chembur, Bhandup wards",
     },
   ];
 
@@ -34,7 +48,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <Card
               key={project.title}

@@ -1,26 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Zap, Settings, Wrench, ArrowRight } from "lucide-react";
+import { Zap, Settings, Wrench, ArrowRight, Flame, Wind, Code } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
       icon: Zap,
-      title: "Electrical Solutions",
-      description: "Complete electrical installations, maintenance, and power distribution systems for government facilities and industrial complexes.",
-      features: ["Power Distribution", "Installation & Maintenance", "Emergency Systems"],
+      title: "Engineering & SITC",
+      description: "Supply, Installation, Testing, and Commissioning of power systems, fire safety, green energy, and IT infrastructure.",
+      features: ["UPS, VFD, DBR & LED Lighting", "Fire Safety Systems", "Biogas & Biomethanation Plants", "CCTV & AV Systems"],
     },
     {
       icon: Settings,
-      title: "Mechanical Services",
-      description: "Industrial machinery, HVAC systems, and process equipment installation with precision engineering and quality assurance.",
-      features: ["HVAC Systems", "Industrial Machinery", "Process Equipment"],
+      title: "Maintenance & Operations",
+      description: "Comprehensive AMCs and operations management for cranes, HVAC systems, and environmental plants.",
+      features: ["EOT Cranes & Hoists AMC", "HVAC & DG Sets", "Plant O&M Services", "Load Testing & Commissioning"],
     },
     {
-      icon: Wrench,
-      title: "Custom Projects",
-      description: "Tailored infrastructure solutions designed specifically for government requirements with compliance and security in mind.",
-      features: ["Turnkey Solutions", "Compliance Ready", "24/7 Support"],
+      icon: Code,
+      title: "Specialized Services",
+      description: "Custom software solutions, civil support, and event infrastructure for government and institutional clients.",
+      features: ["Animal Inventory Management", "Civil & Utility Support", "Event Solutions", "Custom IT Systems"],
     },
   ];
 
