@@ -1,15 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "Projects", href: "#projects" },
-    { name: "About", href: "#about" },
+    { name: "Home", href: "/", type: "route" },
+    { name: "Services", href: "#services", type: "hash" },
+    { name: "Projects", href: "#projects", type: "hash" },
+    { name: "About", href: "/about", type: "route" },
   ];
 
   return (
@@ -17,24 +20,35 @@ const Navigation = () => {
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center space-x-3 group">
+          <Link to="/" className="flex items-center space-x-3 group">
             <div className="w-11 h-11 bg-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
               <span className="text-primary-foreground font-bold text-xl">H</span>
             </div>
             <span className="text-xl font-bold text-foreground tracking-tight">Hitech Systems</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-10">
             {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-muted-foreground hover:text-foreground font-medium text-[15px] transition-colors relative group py-2"
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300" />
-              </a>
+              item.type === "route" ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="text-muted-foreground hover:text-foreground font-medium text-[15px] transition-colors relative group py-2"
+                >
+                  {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300" />
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={isHome ? item.href : `/${item.href}`}
+                  className="text-muted-foreground hover:text-foreground font-medium text-[15px] transition-colors relative group py-2"
+                >
+                  {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300" />
+                </a>
+              )
             ))}
             <Button variant="secondary" size="default" className="ml-4">
               Get Quote
@@ -54,14 +68,25 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden py-6 space-y-2 animate-fade-in">
             {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block py-3 text-muted-foreground hover:text-foreground font-medium transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </a>
+              item.type === "route" ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="block py-3 text-muted-foreground hover:text-foreground font-medium transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={isHome ? item.href : `/${item.href}`}
+                  className="block py-3 text-muted-foreground hover:text-foreground font-medium transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </a>
+              )
             ))}
             <div className="pt-4">
               <Button variant="secondary" size="default" className="w-full">
