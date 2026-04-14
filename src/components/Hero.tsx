@@ -5,7 +5,10 @@ import QuoteForm from "./QuoteForm";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-16">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center pt-[120px] sm:pt-[140px] lg:pt-[160px]"
+    >
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -17,16 +20,16 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-14 relative z-10">
-<div className="max-w-4xl pl-20 md:pl-20 sm:pl-8 pl-4">
+      <div className="container mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
+        <div className="max-w-4xl mx-auto sm:ml-0">
 
 
-          <h1 className="text-5xl mt-16 md:text-6xl font-bold text-primary-foreground mb-6 animate-slide-in leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary-foreground mb-6 animate-slide-in leading-tight">
             100% Trusted<br />
             <span className="text-secondary">Infrastructure Solutions</span>
           </h1>
 
-          <p className="text-xl md:text-sm text-primary-foreground/90 mb-8 max-w-2xl animate-fade-in">
+          <p className="text-base sm:text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl animate-fade-in">
             Partnering with Government and Industry to deliver cutting-edge electrical, mechanical, and custom infrastructure projects
           </p>
           <div className=" inline-flex items-center gap-2 bg-secondary/20 backdrop-blur-sm border border-secondary/30 rounded-full px-4 py-2 mb-6 animate-fade-in">
@@ -51,7 +54,7 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 max-w-2xl mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mb-20">
             <div className="text-center p-3 bg-primary-foreground/10 backdrop-blur-sm rounded-lg border border-primary-foreground/20 animate-scale-in">
               <div className="text-3xl md:text-4xl font-bold text-secondary mb-1">18+</div>
               <div className="text-sm text-primary-foreground/80">Years Excellence</div>

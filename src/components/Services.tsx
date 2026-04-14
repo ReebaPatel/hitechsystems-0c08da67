@@ -25,52 +25,60 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-background">
-      <div className="container mx-auto px-14">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Our Services
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive infrastructure solutions backed by decades of expertise
-          </p>
-        </div>
+   <section id="services" className="py-20 bg-background">
+  <div className="container mx-auto px-6 sm:px-10 lg:px-14">
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card
-              key={service.title}
-              className="group hover:shadow-xl transition-all duration-300 animate-scale-in border-border hover:border-secondary"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardHeader>
-                <div className="w-16 h-16 bg-secondary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
-                  <service.icon className="w-8 h-8 text-secondary" />
-                </div>
-                <CardTitle className="text-2xl mb-2">{service.title}</CardTitle>
-                <CardDescription className="text-base">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-2" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                {/* <Button variant="ghost" className="w-full group/btn">
-                  Learn More
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button> */}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
+    {/* Header */}
+    <div className="text-center mb-16 animate-fade-in">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
+        Our Services
+      </h2>
+      <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2">
+        Comprehensive infrastructure solutions backed by decades of expertise
+      </p>
+    </div>
+
+    {/* Cards Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {services.map((service, index) => (
+        <Card
+          key={service.title}
+          className="group h-full hover:shadow-xl transition-all duration-300 animate-scale-in border-border hover:border-secondary"
+          style={{ animationDelay: `${index * 0.1}s` }}
+        >
+          <CardHeader>
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-secondary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
+              <service.icon className="w-7 h-7 sm:w-8 sm:h-8 text-secondary" />
+            </div>
+
+            <CardTitle className="text-xl sm:text-2xl mb-2">
+              {service.title}
+            </CardTitle>
+
+            <CardDescription className="text-sm sm:text-base">
+              {service.description}
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent>
+            <ul className="space-y-2 mb-6">
+              {service.features.map((feature) => (
+                <li
+                  key={feature}
+                  className="flex items-center text-xs sm:text-sm text-muted-foreground"
+                >
+                  <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-2" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
   );
 };
 
